@@ -1,0 +1,25 @@
+{% extends "AppTicket/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">FORMULARIO DE SOLICITUDES</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<form action="{% url 'solicitudForm' %}" method="POST">{% csrf_token %}
+    <table>
+
+        {{ formulario.as_table }}
+
+    </table>
+
+    <input type="submit" value="Guardar Solicitud">
+</form>
+{% endblock %}
+
+
+
+{% block subtitulo %}
+
+{% endblock %}

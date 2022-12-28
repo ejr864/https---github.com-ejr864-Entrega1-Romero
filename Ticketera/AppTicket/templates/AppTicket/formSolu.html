@@ -1,0 +1,22 @@
+{% extends "AppTicket/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">FORMULARIO</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<form action="" method="POST">  {% crf token %}
+    <p>asunto: <input type="text" name="asunto"> </p>
+    <p>nombre: <input type="text" name="nombre"> </p>
+    <p>apellido: <input type="text" name="apellido"> </p>
+    <p>descripcion: <input type="text" name="descripcion"> </p>
+    <input type="submit" value="Guardar Solicitud">
+</form>
+{% endblock %}
+
+
+
+{% block subtitulo %}
+{% endblock %}

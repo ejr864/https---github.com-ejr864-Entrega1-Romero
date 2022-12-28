@@ -1,0 +1,16 @@
+{% extends "AppTicket/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">GESTION DE SOLICITUDES </h1>
+{% endblock %}
+
+
+
+{% block subtitulo %}
+
+
+<a class="btn btn-primary" href="{% url 'solicitudForm' %}">Crear Nueva Solicitud</a> 
+
+{% endblock %}
