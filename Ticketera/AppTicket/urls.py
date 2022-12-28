@@ -15,6 +15,6 @@ urlpatterns = [
     path('usuario/', usuario, name="usuario"),
     path('solicitudForm/', solicitudFormularioVista, name="solicitudForm"),
     path('formUsuario/', UsuarioFormularioVista,  name="formUsuario"),
-
+    path('formSolu/', SolucionFormularioVista,  name="formSolu"),
     ]
 

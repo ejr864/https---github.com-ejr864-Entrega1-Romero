@@ -12,3 +12,8 @@ class UserForm(forms.Form):
     apellido= forms.CharField(label="apellido", max_length=50)
     cargo= forms.CharField(label="cargo", max_length=50)
     email= forms.EmailField(label="email", max_length=50)
+
+
+class SolFor(forms.Form):
+    titulo= forms.CharField(label="titulo", max_length=50)
+    detalle= forms.CharField(label="detalle", max_length=50)
