@@ -14,5 +14,7 @@ urlpatterns = [
     path('reporte/', reporte, name="reporte"),
     path('usuario/', usuario, name="usuario"),
     path('solicitudForm/', solicitudFormularioVista, name="solicitudForm"),
+    path('formUsuario/', UsuarioFormularioVista,  name="formUsuario"),
+
     ]
 

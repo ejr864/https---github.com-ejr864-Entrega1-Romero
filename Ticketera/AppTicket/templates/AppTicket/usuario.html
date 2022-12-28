@@ -7,10 +7,15 @@
 {% endblock %}
 
 
+{% block contenido_que_cambia %}
+
+<h1>{{ mensaje }} </h1>
+
+{% endblock %}
+
 
 {% block subtitulo %}
 
-
-
+<a class="btn btn-primary" href="{% url 'formUsuario' %}">Crear Nuevo Usuario</a> 
 
 {% endblock %}

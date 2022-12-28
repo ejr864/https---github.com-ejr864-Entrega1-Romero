@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from AppTicket.forms import SoliciForm
-from .models import Solicitud
+from AppTicket.forms import SoliciForm, UserForm
+from .models import Solicitud, Usuario
 #from .templates import solicitudForm
 
 # Create your views here.
@@ -56,5 +56,23 @@ def solicitudFormularioVista(request):
 
 
 
+
+def UsuarioFormularioVista(request):
+    if request.method=="POST":
+        formulario= UserForm(request.POST)
+        if formulario.is_valid():
+            info=formulario.cleaned_data
+            nombre= info["nombre"]
+            apellido= info["apellido"]
+            cargo= info["cargo"]
+            email= info["email"]
+            usuario= Usuario(nombre=nombre, apellido=apellido, cargo=cargo, email=email)
+            usuario.save()
+            return render(request, "AppTicket/inicio.html", {"mensaje": "informacion guardada"})
+        else:
+            return render(request, "AppTicket/formUsuario.html", {"formulario": formulario, "mensaje": "informacion no valida"})
+    else:
+        formulario= UserForm()
+        return render(request, "AppTicket/formUsuario.html", {"formulario": formulario})
         
 		
