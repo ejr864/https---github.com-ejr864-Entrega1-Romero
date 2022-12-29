@@ -92,5 +92,16 @@ def SolucionFormularioVista(request):
     else:
         formulario= SolFor()
         return render(request, "AppTicket/formSolu.html", {"formulario": formulario})
+
+
+
+def buscar(request):
+    
+    usuario= request.GET["nombre"]
+    if usuario!="":
+        usuario = Usuario.objects.filter(nombre__icontains=usuario)
+        return render(request, "AppCoder/resultadoBusqueda.html", {"usuario": usuario})
+    else:
+        return render(request, "AppCoder/busquedaUser.html", {"mensaje": "Che Ingresa una comision para buscar!"})
         
 		

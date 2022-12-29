@@ -1,0 +1,27 @@
+{% extends "AppTicket/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">FORMULARIO DE BUSQUEDA</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h3>{{ mensaje }}</h3>
+
+
+<form action="{% url 'busquedaUser' %}" method="GET"> 
+
+    <input type="text" name="nombre"  placeholder="INSERTE NOMBRE">
+
+    <input type="submit" value="buscar usuario">
+
+
+</form>
+{% endblock %}
+
+
+
+
+{% block subtitulo %}
+{% endblock %}
