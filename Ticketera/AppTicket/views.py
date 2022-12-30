@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from AppTicket.forms import SoliciForm, UserForm, SolFor
 from .models import Solicitud, Usuario, Solucion
+
 #from .templates import solicitudForm
 
 # Create your views here.
@@ -95,13 +96,20 @@ def SolucionFormularioVista(request):
 
 
 
+
+
+
+
+def busquedaUser(request):
+     return render(request, "AppTicket/busquedaUser.html")
+
+
+
 def buscar(request):
-    
     usuario= request.GET["nombre"]
-    if usuario!="":
-        usuario = Usuario.objects.filter(nombre__icontains=usuario)
-        return render(request, "AppCoder/resultadoBusqueda.html", {"usuario": usuario})
+    if usuario!="":        
+        usuario= Usuario.objects.filter(nombre__icontains=usuario)
+        return render(request, "AppTicket/resultadosBusqueda.html", {"usuario": usuario})
     else:
-        return render(request, "AppCoder/busquedaUser.html", {"mensaje": "Che Ingresa una comision para buscar!"})
-        
-		
+        return render(request, "AppTicket/busquedaUser.html", {"mensaje": "Che Ingresa un usuario para buscar!"})
+

@@ -16,6 +16,7 @@ urlpatterns = [
     path('solicitudForm/', solicitudFormularioVista, name="solicitudForm"),
     path('formUsuario/', UsuarioFormularioVista,  name="formUsuario"),
     path('formSolu/', SolucionFormularioVista,  name="formSolu"),
-    path('busquedaUser/', buscar,  name="busquedaUser"),
+    path('busquedaUser/', busquedaUser,  name="busquedaUser"),
+    path('buscar/', buscar, name="buscar"),
     ]
 

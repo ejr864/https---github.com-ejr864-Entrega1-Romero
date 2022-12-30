@@ -1,0 +1,29 @@
+{% extends "AppTicket/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">RESULTADOS DE LA BUSQUEDA DE USUARIOS</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+
+{% if usuario %}
+
+<h2>LISTADO DE USUARIOS</h2>
+{% for usuario in usuario %}
+
+<h3>{{ usuario.nombre }} - {{ usuario.apellido }} - {{ usuario.cargo }} - {{ usuario.email }}</h3>
+
+{% endfor %}
+
+{% else %}
+
+<h2>NO HAY USUARIOS</h2>
+
+{% endif %}
+
+
+{% endblock %}
+
